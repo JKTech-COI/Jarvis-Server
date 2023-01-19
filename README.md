@@ -12,12 +12,12 @@
 
 </div>
 
----
+<!-- ---
 <div align="center">
 
-<!-- **Note regarding Apache Log4j2 Remote Code Execution (RCE) Vulnerability - CVE-2021-44228 - ESA-2021-31** -->
+**Note regarding Apache Log4j2 Remote Code Execution (RCE) Vulnerability - CVE-2021-44228 - ESA-2021-31**
 
-</div>
+</div> -->
 
 <!-- According to [ElasticSearch's latest report](https://discuss.elastic.co/t/apache-log4j2-remote-code-execution-rce-vulnerability-cve-2021-44228-esa-2021-31/291476), 
 supported versions of Elasticsearch (6.8.9+, 7.8+) used with recent versions of the JDK (JDK9+) **are not susceptible to either remote code execution or information leakage**
@@ -41,9 +41,9 @@ ElasticSearch's guidance for Elasticsearch remains unchanged by this new vulnera
 
 ## JARVIS Server
 
-The **JARVIS Server** is the backend service infrastructure for JARVIS (https://github.com/allegroai/clearml).
+The **JARVIS Server** is the backend service infrastructure for JARVIS.
 It allows multiple users to collaborate and manage their experiments.
-**JARVIS** offers a free hosted service(https://app.clear.ml/), which is maintained by **JARVIS** and open to anyone.
+**JARVIS** offers a free hosted service, which is maintained by **JARVIS** and open to anyone.
 In order to host your own server, you will need to launch the **JARVIS Server** and point **JARVIS** to it.
 
 The **JARVIS Server** contains the following components:
@@ -54,7 +54,7 @@ The **JARVIS Server** contains the following components:
     * Querying experiments history, logs and results
 * Locally-hosted file server for storing images and models making them easily accessible using the Web-App
 
-You can quickly [deploy](#launching-the-clearml-server)  your **JARVIS Server** using Docker, AWS EC2 AMI, or Kubernetes. 
+<!-- You can quickly [deploy](#launching-the-clearml-server)  your **JARVIS Server** using Docker, AWS EC2 AMI, or Kubernetes.  -->
 
 ## System design
 
@@ -88,7 +88,7 @@ For example, to see if port `8080` is in use:
 
         netstat -an |find /i "8080"
    
-### Launching   
+<!-- ### Launching   
     
 Launch The **JARVIS Server** in any of the following formats:
 
@@ -100,13 +100,13 @@ Launch The **JARVIS Server** in any of the following formats:
     - [Windows 10](https://clear.ml/docs/latest/docs/deploying_clearml/clearml_server_win)
 - Kubernetes    
     - [Kubernetes Helm](https://clear.ml/docs/latest/docs/deploying_clearml/clearml_server_kubernetes_helm)
-    - Manual [Kubernetes installation](https://clear.ml/docs/latest/docs/deploying_clearml/clearml_server_kubernetes)
+    - Manual [Kubernetes installation](https://clear.ml/docs/latest/docs/deploying_clearml/clearml_server_kubernetes) -->
 
 ## Connecting JARVIS to your JARVIS Server
 
 In order to set up the **JARVIS** client to work with your **JARVIS Server**:
-- Run the `clearml-init` command for an interactive setup.
-- Or manually edit `~/clearml.conf` file, making sure the server settings (`api_server`, `web_server`, `file_server`) are configured correctly, for example:
+- Run the `jarvis-init` command for an interactive setup.
+- Or manually edit `~/jarvis.conf` file, making sure the server settings (`api_server`, `web_server`, `file_server`) are configured correctly, for example:
 
         api {
             # API server on port 8008
@@ -123,13 +123,13 @@ In order to set up the **JARVIS** client to work with your **JARVIS Server**:
 it will be inferred from the http/s scheme.
 
 After launching the **JARVIS Server** and configuring the **JARVIS** client to use the **JARVIS Server**,
-you can [use](https://github.com/allegroai/clearml) **JARVIS** in your experiments and view them in your **JARVIS Server** web server,
+you can [use](https://github.com/JKTech-COI/jarvis.git) **JARVIS** in your experiments and view them in your **JARVIS Server** web server,
 for example http://localhost:8080.  
-For more information about the JARVIS client, see [**JARVIS**](https://github.com/allegroai/clearml).
+For more information about the JARVIS client, see [**JARVIS**](https://github.com/JKTech-COI/jarvis.git).
 
 ## JARVIS-Agent Services  <a name="services"></a> 
 
-As of version 0.15 of **JARVIS Server**, dockerized deployment includes a **JARVIS-Agent Services** container running as 
+**JARVIS Server**  dockerized deployment includes a **JARVIS-Agent Services** container running as 
 part of the docker container collection.
 
 JARVIS-Agent Services is an extension of JARVIS-Agent that provides the ability to launch long-lasting jobs 
@@ -142,7 +142,7 @@ increased data transparency)
 JARVIS-Agent Services container will spin **any** task enqueued into the dedicated `services` queue. 
 Every task launched by JARVIS-Agent Services  will be registered as a new node in the system, 
 providing tracking and transparency capabilities.  
-You can also run the JARVIS-Agent Services manually, see details in [JARVIS-agent services mode](https://github.com/allegroai/clearml-agent#clearml-agent-services-mode-)
+You can also run the JARVIS-Agent Services manually, see details in [JARVIS-agent services mode](https://github.com/JKTech-COI/jarvis-agent.git#jarvis-agent-services-mode-)
 
 **Note**: It is the user's responsibility to make sure the proper tasks are pushed into the `services` queue. 
 Do not enqueue training / inference tasks into the `services` queue, as it will put unnecessary load on the server.
@@ -218,10 +218,10 @@ To upgrade your existing **JARVIS Server** deployment:
    docker-compose -f docker-compose.yml up
    ```
 
-**\* If something went wrong along the way, check our FAQ: [Common Docker Upgrade Errors](https://clear.ml/docs/latest/docs/faq/).**
+<!-- **\* If something went wrong along the way, check our FAQ: [Common Docker Upgrade Errors](https://clear.ml/docs/latest/docs/faq/).** -->
 
 
-## Community & Support
+<!-- ## Community & Support
 
 If you have any questions, look to the JARVIS [FAQ](https://clear.ml/docs/latest/docs/faq), or
 tag your questions on [stackoverflow](https://stackoverflow.com/questions/tagged/clearml) with '**clearml**' tag.
@@ -240,4 +240,4 @@ member of the community to support the projects we love and cherish.
 We believe the cause for the license change in both cases is more than just,
 and chose [SSPL](https://www.mongodb.com/licensing/server-side-public-license) because it is the more general and flexible of the two licenses.
 
-This is our way to say - we support you guys!
+This is our way to say - we support you guys! -->
