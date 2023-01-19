@@ -1,29 +1,29 @@
 <div align="center">
 
-<img src="docs/clearml_server_logo.png" width="250px">
+<img src="docs/JARVIS-Server(PNG).png" width="250px">
 
 **JARVIS - Auto-Magical Suite of tools to streamline your ML workflow 
 </br>Experiment Manager, ML-Ops and Data-Management**
 
-[![GitHub license](https://img.shields.io/badge/license-SSPL-green.svg)](https://img.shields.io/badge/license-SSPL-green.svg)
+<!-- [![GitHub license](https://img.shields.io/badge/license-SSPL-green.svg)](https://img.shields.io/badge/license-SSPL-green.svg)
 [![Python versions](https://img.shields.io/badge/python-3.6%20%7C%203.7-blue.svg)](https://img.shields.io/badge/python-3.6%20%7C%203.7-blue.svg)
 [![GitHub version](https://img.shields.io/github/release-pre/allegroai/trains-server.svg)](https://img.shields.io/github/release-pre/allegroai/trains-server.svg)
-[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/allegroai)](https://artifacthub.io/packages/search?repo=allegroai)
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/allegroai)](https://artifacthub.io/packages/search?repo=allegroai) -->
 
 </div>
 
 ---
 <div align="center">
 
-**Note regarding Apache Log4j2 Remote Code Execution (RCE) Vulnerability - CVE-2021-44228 - ESA-2021-31**
+<!-- **Note regarding Apache Log4j2 Remote Code Execution (RCE) Vulnerability - CVE-2021-44228 - ESA-2021-31** -->
 
 </div>
 
-According to [ElasticSearch's latest report](https://discuss.elastic.co/t/apache-log4j2-remote-code-execution-rce-vulnerability-cve-2021-44228-esa-2021-31/291476), 
+<!-- According to [ElasticSearch's latest report](https://discuss.elastic.co/t/apache-log4j2-remote-code-execution-rce-vulnerability-cve-2021-44228-esa-2021-31/291476), 
 supported versions of Elasticsearch (6.8.9+, 7.8+) used with recent versions of the JDK (JDK9+) **are not susceptible to either remote code execution or information leakage**
-due to Elasticsearch’s usage of the Java Security Manager.
+due to Elasticsearch’s usage of the Java Security Manager. -->
 
-**As the latest version of JARVIS Server uses Elasticsearch 7.10+ with JDK15, it is not affected by these vulnerabilities.**
+<!-- **As the latest version of JARVIS Server uses Elasticsearch 7.10+ with JDK15, it is not affected by these vulnerabilities.**
 
 As a precaution, we've upgraded the ES version to 7.16.2 and added the mitigation recommended by ElasticSearch to our latest [docker-compose.yml](https://github.com/allegroai/clearml-server/blob/cfccbe05c158b75e520581f86e9668291da5c70a/docker/docker-compose.yml#L42) file.
 
@@ -35,16 +35,15 @@ we still recommend upgrading to the latest version of JARVIS Server. Alternative
 **Update 15 December**: A further vulnerability (CVE-2021-45046) was disclosed on December 14th.
 ElasticSearch's guidance for Elasticsearch remains unchanged by this new vulnerability, thus **not affecting JARVIS Server**.
 
-**Update 22 December**: To keep with ElasticSearch's recommendations, we've upgraded the ES version to the newly released 7.16.2
+**Update 22 December**: To keep with ElasticSearch's recommendations, we've upgraded the ES version to the newly released 7.16.2 -->
 
 ---
 
 ## JARVIS Server
-#### *Formerly known as Trains Server*
 
-The **JARVIS Server** is the backend service infrastructure for [JARVIS](https://github.com/allegroai/clearml).
+The **JARVIS Server** is the backend service infrastructure for JARVIS (https://github.com/allegroai/clearml).
 It allows multiple users to collaborate and manage their experiments.
-**JARVIS** offers a [free hosted service](https://app.clear.ml/), which is maintained by **JARVIS** and open to anyone.
+**JARVIS** offers a free hosted service(https://app.clear.ml/), which is maintained by **JARVIS** and open to anyone.
 In order to host your own server, you will need to launch the **JARVIS Server** and point **JARVIS** to it.
 
 The **JARVIS Server** contains the following components:
