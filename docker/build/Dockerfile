@@ -1,4 +1,6 @@
-FROM centos/nodejs-12-centos7 AS webapp
+FROM centos:7
+RUN yum update -y && \
+    yum install -y nodejs14 AS webapp
 
 ARG CLEARML_WEB_GIT_URL=https://github.com/allegroai/clearml-web.git
 
