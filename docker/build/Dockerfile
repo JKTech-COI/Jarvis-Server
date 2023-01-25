@@ -1,4 +1,4 @@
-FROM centos/nodejs-12-centos7 AS webapp
+FROM adevur/centos-nodejs AS webapp
 
 ARG CLEARML_WEB_GIT_URL=https://github.com/allegroai/clearml-web.git
 
