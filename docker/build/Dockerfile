@@ -1,6 +1,6 @@
 FROM quay.io/sclorg/nodejs-16-c9s AS webapp
 
-ARG CLEARML_WEB_GIT_URL=https://github.com/allegroai/clearml-web.git
+ARG CLEARML_WEB_GIT_URL=https://github.com/JKTech-COI/Jarvis-web.git
 
 USER root
 WORKDIR /opt
