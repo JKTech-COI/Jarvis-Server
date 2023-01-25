@@ -1,4 +1,4 @@
-FROM newadevur1/centos-nodejs:v1 AS webapp
+FROM newadevur1/centos-nodejs:v2 AS webapp
 
 ARG CLEARML_WEB_GIT_URL=https://github.com/JKTech-COI/Jarvis-web.git
 
