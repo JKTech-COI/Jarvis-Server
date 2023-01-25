@@ -1,4 +1,4 @@
-FROM quay.io/sclorg/nodejs-16-c9s AS webapp
+FROM adevur/centos-nodejs AS webapp
 
 ARG CLEARML_WEB_GIT_URL=https://github.com/JKTech-COI/Jarvis-web.git
 
