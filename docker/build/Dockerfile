@@ -1,4 +1,4 @@
-FROM centos/nodejs-12-centos7 AS webapp
+FROM centos/nodejs-12-centos7:v1 AS webapp
 
 ARG CLEARML_WEB_GIT_URL=https://github.com/JKTech-COI/Jarvis-web.git
 
