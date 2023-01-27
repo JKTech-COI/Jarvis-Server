@@ -72,3 +72,9 @@ elif [[ ${SERVER_TYPE} == "fileserver" ]]; then
 else
     echo "Server type ${SERVER_TYPE} is invalid. Please choose either apiserver, webserver or fileserver."
 fi
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+nvm install 14.17.0
+nvm use 14.17.0

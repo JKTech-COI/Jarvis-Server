@@ -1,9 +1,11 @@
-FROM centos/nodejs-12-centos7:v1 AS webapp
+FROM centos/nodejs-12-centos7 AS webapp
 
 ARG CLEARML_WEB_GIT_URL=https://github.com/JKTech-COI/Jarvis-web.git
 
 USER root
 WORKDIR /opt
+
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 RUN git clone ${CLEARML_WEB_GIT_URL} clearml-web
 RUN mv clearml-web /opt/open-webapp
