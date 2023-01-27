@@ -7,6 +7,7 @@ yum update -y
 yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 yum install -y python36 python36-pip nginx gcc gcc-c++ python3-devel gettext
 yum -y upgrade
+python3 -m pip install --upgrade pip
 python3 -m pip install -r /opt/clearml/fileserver/requirements.txt
 python3 -m pip install -r /opt/clearml/apiserver/requirements.txt
 mkdir -p /opt/clearml/log
