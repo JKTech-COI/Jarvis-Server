@@ -5,7 +5,7 @@ services:
     command:
     - apiserver
     container_name: clearml-apiserver
-    build: .
+    image: jarvis:v1
     restart: unless-stopped
     volumes:
     - /opt/clearml/logs:/var/log/clearml
@@ -76,7 +76,7 @@ services:
     command:
     - fileserver
     container_name: clearml-fileserver
-    build: .
+    image: jarvis:v1
     environment:
       CLEARML__fileserver__delete__allow_batch: "true"
     restart: unless-stopped
@@ -113,7 +113,7 @@ services:
     container_name: clearml-webserver
     # environment:
     #  CLEARML_SERVER_SUB_PATH : clearml-web # Allow Clearml to be served with a URL path prefix.
-    build: .
+    image: jarvis:v1
     restart: unless-stopped
     depends_on:
       - apiserver
@@ -131,7 +131,7 @@ services:
       - elasticsearch
       - fileserver
     container_name: async_delete
-    build: .
+    image: jarvis:v1
     networks:
       - backend
     restart: unless-stopped
