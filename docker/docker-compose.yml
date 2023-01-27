@@ -4,8 +4,8 @@ services:
   apiserver:
     command:
     - apiserver
-    container_name: clearml-apiserver
-    image: .
+    container_name: jarvis-apiserver
+    image: jarvis/jarvis-server:v1
     restart: unless-stopped
     volumes:
     - /opt/clearml/logs:/var/log/clearml
@@ -38,7 +38,7 @@ services:
   elasticsearch:
     networks:
       - backend
-    container_name: clearml-elastic
+    container_name: jarvis-elastic
     environment:
       ES_JAVA_OPTS: -Xms2g -Xmx2g -Dlog4j2.formatMsgNoLookups=true
       ELASTIC_PASSWORD: ${ELASTIC_PASSWORD}
@@ -75,8 +75,8 @@ services:
       - frontend
     command:
     - fileserver
-    container_name: clearml-fileserver
-    image: .
+    container_name: jarvis-fileserver
+    image: jarvis/jarvis-server:v1
     environment:
       CLEARML__fileserver__delete__allow_batch: "true"
     restart: unless-stopped
@@ -90,7 +90,7 @@ services:
   mongo:
     networks:
       - backend
-    container_name: clearml-mongo
+    container_name: jarvis-mongo
     image: mongo:4.4.9
     restart: unless-stopped
     command: --setParameter internalQueryMaxBlockingSortMemoryUsageBytes=196100200
@@ -101,7 +101,7 @@ services:
   redis:
     networks:
       - backend
-    container_name: clearml-redis
+    container_name: jarvis-redis
     image: redis:5.0
     restart: unless-stopped
     volumes:
@@ -110,10 +110,10 @@ services:
   webserver:
     command:
     - webserver
-    container_name: clearml-webserver
+    container_name: jarvis-webserver
     # environment:
     #  CLEARML_SERVER_SUB_PATH : clearml-web # Allow Clearml to be served with a URL path prefix.
-    image: .
+    image: jarvis/jarvis-server:v1
     restart: unless-stopped
     depends_on:
       - apiserver
@@ -157,7 +157,7 @@ services:
   agent-services:
     networks:
       - backend
-    container_name: clearml-agent-services
+    container_name: jarvis-agent-services
     image: allegroai/clearml-agent-services:latest
     deploy:
       restart_policy:
