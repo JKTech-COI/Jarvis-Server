@@ -6,7 +6,6 @@ USER root
 WORKDIR /opt
 
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-RUN unset NPM_CONFIG_PREFIX
 
 RUN git clone ${CLEARML_WEB_GIT_URL} clearml-web
 RUN mv clearml-web /opt/open-webapp
